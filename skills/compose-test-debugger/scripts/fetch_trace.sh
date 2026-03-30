@@ -1,0 +1,1 @@
+adb logcat -d -s TRACE:V --format=tag:raw | awk '/==== Beginning of trace ====/ {content=$0 "\n"; next} {content=content $0 "\n"} END {printf "%s", content}'
